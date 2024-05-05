@@ -8,11 +8,9 @@ Created on Thu Apr 11 14:19:08 2024
 import pandas as pd
 from docx import Document
 
-# Assuming topics_df is your DataFrame
-# Sample structure, replace with your actual DataFrame
 topics_df = pd.read_csv("C:/Users/arnea/OneDrive/Desktop/Thesis/Work/Python/dtm_topics_over_timev6.csv")
 
-# Renaming the mislabeled columns
+# Renaming mislabeled columns
 topics_df.rename(columns={'Words': 'Weights', 'Weights': 'Words'}, inplace=True)
 
 # Aggregate words for each topic across all time slices
