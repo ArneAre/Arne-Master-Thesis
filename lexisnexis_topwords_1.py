@@ -11,13 +11,13 @@ import ast  # To safely evaluate strings containing Python literals
 # Load the data
 df = pd.read_csv("C:/Users/arnea/OneDrive/Desktop/Thesis/Work/Python/dtm_topics_over_timev4.csv")
 
-# The columns are swapped; let's correct that:
+# Correcting swapped columns
 df['Temp'] = df['Words']
 df['Words'] = df['Weights']
 df['Weights'] = df['Temp']
 df.drop(columns='Temp', inplace=True)
 
-# Convert the 'Words' and 'Weights' from string representations of lists to actual lists
+# Converting the 'Words' and 'Weights' from string representations of lists to actual lists
 df['Words'] = df['Words'].apply(ast.literal_eval)
 df['Weights'] = df['Weights'].apply(lambda x: [float(weight) for weight in ast.literal_eval(x)])
 
@@ -48,7 +48,7 @@ for topic_num in df['TopicNum'].unique():
     top_words_df = pd.concat([top_words_df, top_words], ignore_index=True)
 
 
-# Optionally, save the result to a new CSV
+# Save to CSV
 top_words_df.to_csv('top_words_per_topicv4.csv', index=False)
 
 # Print the DataFrame to verify
