@@ -14,7 +14,7 @@ nltk.download('punkt')
 # Load the DataFrame
 df = pd.read_csv('C:/Users/arnea/OneDrive/Desktop/Thesis/Work/Python/df_no_duplicatesv3.csv')
 
-# Ensure the Article_Text column is a string
+# Ensuring the Article_Text column is a string
 df['Article_Text'] = df['Article_Text'].astype(str)
 
 # Calculate word counts
