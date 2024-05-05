@@ -10,14 +10,14 @@ from docx import Document
 from docx.shared import Pt
 from datetime import datetime
 
-# Load your DataFrame
+# Load my DataFrame
 df = pd.read_csv('C:/Users/arnea/OneDrive/Desktop/Thesis/Work/Python/df_preprocessedv4.csv')
 df['Date'] = pd.to_datetime(df['Date'])
 
 # Create a new Word document
 doc = Document()
 
-# Organize data by publication and then by Date
+# Organizing data by publication and then by Date
 grouped = df.groupby('Publication')
 
 # Loop through each publication
