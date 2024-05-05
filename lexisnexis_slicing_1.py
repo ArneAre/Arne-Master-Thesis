@@ -7,7 +7,7 @@ Created on Mon Apr  8 22:03:23 2024
 
 import pandas as pd
 
-# Load your dataset
+# Loading my dataset
 df = pd.read_csv('C:/Users/arnea/OneDrive/Desktop/Thesis/Work/Python/df_preprocessedv2.csv')
 df['Date'] = pd.to_datetime(df['Date'])
 
@@ -22,5 +22,5 @@ reduced_df = filtered_df.groupby(filtered_df['Date'].dt.to_period('M')).apply(la
 # Display the reduced DataFrame
 print(reduced_df)
 
-# Save the reduced DataFrame to a CSV file if needed
+# Save the reduced DataFrame to a CSV file
 reduced_df.to_csv('reduced_preprocessed.csv', index=False)
